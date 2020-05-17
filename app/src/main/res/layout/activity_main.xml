@@ -39,7 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Find"
+        android:text="Get data"
+        android:background="#DD4791DA"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -84,18 +85,20 @@
 
             <TextView
                 android:id="@+id/total"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textColor="#0325FA"
                 android:text="Total "
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/totaldata"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#0325FA"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="TextView"
@@ -109,20 +112,22 @@
 
             <TextView
                 android:id="@+id/recover"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Recovered"
+                android:textColor="#689F38"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/recoverdata"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textColor="#689F38"
                 android:text="TextView"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -134,20 +139,22 @@
 
             <TextView
                 android:id="@+id/Deaths"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Total Deaths"
+                android:textColor="#D32F2F"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/deathData"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textColor="#D32F2F"
                 android:text="TextView"
                 android:textSize="20sp" />
 
@@ -160,21 +167,24 @@
 
             <TextView
                 android:id="@+id/todaydeath"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Today Deaths"
+                android:textColor="#FF0000"
+
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/todaydeathdata"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="TextView"
+                android:textColor="#FF0000"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -185,21 +195,23 @@
 
             <TextView
                 android:id="@+id/population"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Population"
+                android:textColor="#303F9F"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/populationdata"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="text"
+                android:textColor="#303F9F"
                 android:textSize="20sp" />
         </LinearLayout>
 
