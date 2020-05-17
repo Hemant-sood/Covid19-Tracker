@@ -87,9 +87,14 @@ public class MainActivity extends AppCompatActivity {
                 todayDeath.setText(json.get("todayDeaths").toString());
                 todayCases.setText(json.get("todayCases").toString());
                 active.setText(json.get("active").toString());
-                countryFlag = json.getJSONObject("countryInfo").get("flag").toString();
+                if( inputText.equals("world") || inputText.equals("World") ){
 
-                Picasso.get().load(countryFlag).into(countryFlagImage);
+                    Picasso.get().load(R.drawable.worldwide).into(countryFlagImage);
+                }
+                else {
+                    countryFlag = json.getJSONObject("countryInfo").get("flag").toString();
+                    Picasso.get().load(countryFlag).into(countryFlagImage);
+                }
 
                 linearLayout.setVisibility(View.VISIBLE);
             } catch (JSONException e) {
