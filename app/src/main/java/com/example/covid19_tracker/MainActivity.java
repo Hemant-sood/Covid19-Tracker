@@ -8,11 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androdocs.httprequest.HttpRequest;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,8 +22,9 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
     private TextView total, active, todayCases, recover, death, todayDeath, population;
     String api;
-    String defaultPath = "all";
+    String defaultPath = "all", countryFlag;
     String path = "countries/";
+    ImageView countryFlagImage;
     EditText input;
     Button find;
     String inputText;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout = findViewById(R.id.data);
         linearLayout.setVisibility(View.INVISIBLE);
         todayDeath = findViewById(R.id.todaydeathdata);
+        countryFlagImage = findViewById(R.id.flag);
 
         api = "https://disease.sh/v2/";
 
@@ -83,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
                 todayDeath.setText(json.get("todayDeaths").toString());
                 todayCases.setText(json.get("todayCases").toString());
                 active.setText(json.get("active").toString());
+                countryFlag = json.getJSONObject("countryInfo").get("flag").toString();
+
+                Picasso.get().load(countryFlag).into(countryFlagImage);
+
                 linearLayout.setVisibility(View.VISIBLE);
             } catch (JSONException e) {
                 Log.d("WHy this Meesage",e.getMessage());
