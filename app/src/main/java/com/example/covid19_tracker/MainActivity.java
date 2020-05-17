@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,29 +18,36 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView data;
+    private TextView total, recover, death, todayDeath, population;
     String api;
     String defaultPath = "all";
     String path = "countries/";
     EditText input;
-    Button bt;
-    String inpuText;
+    Button find;
+    String inputText;
     String fullPath;
+    LinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        data = findViewById(R.id.data);
+        total = findViewById(R.id.totaldata);
+        recover = findViewById(R.id.recoverdata);
+        death = findViewById(R.id.deathData);
+        population = findViewById(R.id.populationdata);
         input = findViewById(R.id.editText);
-        bt = findViewById(R.id.button);
+        find = findViewById(R.id.button);
+        linearLayout = findViewById(R.id.data);
+        linearLayout.setVisibility(View.INVISIBLE);
+        todayDeath = findViewById(R.id.todaydeathdata);
+
         api = "https://disease.sh/v2/";
 
-        bt.setOnClickListener(new View.OnClickListener() {
+        find.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                data.setText("");
-                inpuText = input.getText().toString().trim();
-                if( ! inpuText.equals("")){
+                inputText = input.getText().toString().trim();
+                if( ! inputText.equals("")){
                     new GetData().execute();
                 }
 
@@ -53,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             Toast.makeText(getApplicationContext(),"Wait a second",Toast.LENGTH_SHORT).show();
 
-            if( inpuText.equals("world")){
+            if( inputText.equals("world")){
                 fullPath = api + defaultPath;
             }
             else
-                fullPath = api + path + inpuText;
+                fullPath = api + path + inputText;
             super.onPreExecute();
         }
 
@@ -66,9 +74,12 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(s);
             try {
                 JSONObject json = new JSONObject(s);
-                data.setText(json.get("cases").toString());
-
-    //countries/India
+                total.setText(json.get("cases").toString());
+                recover.setText(json.get("recovered").toString());
+                death.setText(json.get("deaths").toString());
+                population.setText(json.get("population").toString());
+                todayDeath.setText(json.get("todayDeaths").toString());
+                linearLayout.setVisibility(View.VISIBLE);
             } catch (JSONException e) {
                 Log.d("WHy this Meesage",e.getMessage());
             }
