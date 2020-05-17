@@ -18,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView total, recover, death, todayDeath, population;
+    private TextView total, active, todayCases, recover, death, todayDeath, population;
     String api;
     String defaultPath = "all";
     String path = "countries/";
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         total = findViewById(R.id.totaldata);
         recover = findViewById(R.id.recoverdata);
+        active = findViewById(R.id.activedata);
+        todayCases = findViewById(R.id.todaycasesdata);
         death = findViewById(R.id.deathData);
         population = findViewById(R.id.populationdata);
         input = findViewById(R.id.editText);
@@ -79,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 death.setText(json.get("deaths").toString());
                 population.setText(json.get("population").toString());
                 todayDeath.setText(json.get("todayDeaths").toString());
+                todayCases.setText(json.get("todayCases").toString());
+                active.setText(json.get("active").toString());
                 linearLayout.setVisibility(View.VISIBLE);
             } catch (JSONException e) {
                 Log.d("WHy this Meesage",e.getMessage());
