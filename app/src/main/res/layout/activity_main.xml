@@ -19,13 +19,13 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.692" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:gravity="center"
         android:hint="ex - world, india etc"
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="#ADADAD"
+        android:background="#DC81D7E1"
         android:text="Get Data"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="208dp" />
+        app:layout_constraintGuide_begin="191dp" />
 
     <LinearLayout
         android:id="@+id/data"
@@ -76,7 +76,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline1"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline2">
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.26">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,9 +89,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#DEBBE4"
                 android:gravity="center"
-                android:textColor="#FA036E"
                 android:text="Total cases "
+                android:textColor="#FA036E"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -98,10 +100,11 @@
                 android:id="@+id/totaldata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FA036E"
                 android:layout_weight="1"
+                android:background="#DEBBE4"
                 android:gravity="center"
                 android:text="TextView"
+                android:textColor="#FA036E"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -115,9 +118,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#BAEDF3"
                 android:gravity="center"
-                android:textColor="#FF1744"
                 android:text="Active cases"
+                android:textColor="#FF1744"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -125,10 +129,11 @@
                 android:id="@+id/activedata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#0325FA"
                 android:layout_weight="1"
+                android:background="#FFBAEDF3"
                 android:gravity="center"
                 android:text="TextView"
+                android:textColor="#0325FA"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -143,6 +148,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#FFBAEDF3"
                 android:gravity="center"
                 android:text="Deaths"
                 android:textColor="#D32F2F"
@@ -154,9 +160,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#FFBAEDF3"
                 android:gravity="center"
-                android:textColor="#D32F2F"
                 android:text="TextView"
+                android:textColor="#D32F2F"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -171,6 +178,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#FFBAEDF3"
                 android:gravity="center"
                 android:text="Recovered"
                 android:textColor="#689F38"
@@ -182,9 +190,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#FFBAEDF3"
                 android:gravity="center"
-                android:textColor="#689F38"
                 android:text="TextView"
+                android:textColor="#689F38"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -198,9 +207,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#B0E1D767"
                 android:gravity="center"
-                android:textColor="#F86739"
                 android:text="Today cases "
+                android:textColor="#FF0000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -208,10 +218,11 @@
                 android:id="@+id/todaycasesdata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#0325FA"
                 android:layout_weight="1"
+                android:background="#B0E1D767"
                 android:gravity="center"
                 android:text="TextView"
+                android:textColor="#FF0000"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -225,10 +236,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#B0E1D767"
                 android:gravity="center"
                 android:text="Today Deaths"
-                android:textColor="#FF0000"
 
+                android:textColor="#FF0000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -237,6 +249,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#B0E1D767"
                 android:gravity="center"
                 android:text="TextView"
                 android:textColor="#FF0000"
@@ -254,6 +267,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#CEA2A3EF"
                 android:gravity="center"
                 android:text="Population"
                 android:textColor="#303F9F"
@@ -265,6 +279,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#CEA2A3EF"
                 android:gravity="center"
                 android:text="text"
                 android:textColor="#303F9F"
