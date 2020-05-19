@@ -104,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 linearLayout.setVisibility(View.INVISIBLE);
                 countryFlagImage.setVisibility(View.INVISIBLE);
-                Picasso.get().load(R.drawable.notfound);
+                Picasso.get().load(R.drawable.notfound).into(notFoundImage);
                 notFoundImage.setVisibility(View.VISIBLE);
-                Toast.makeText(getApplicationContext(),"No country named found.\nTry to correct spell",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"No country named found.\nTry to correct spell",Toast.LENGTH_SHORT).show();
                 Log.d("WHy this Meesage",e.getMessage());
             }
         }
