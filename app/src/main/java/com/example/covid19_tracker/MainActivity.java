@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.PointerIcon;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     String api;
     String defaultPath = "all", countryFlag;
     String path = "countries/";
-    ImageView countryFlagImage;
+    ImageView countryFlagImage, notFoundImage;
     EditText input;
     Button find;
     String inputText;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.setVisibility(View.INVISIBLE);
         todayDeath = findViewById(R.id.todaydeathdata);
         countryFlagImage = findViewById(R.id.flag);
+        notFoundImage = findViewById(R.id.notfound);
 
         api = "https://disease.sh/v2/";
 
@@ -95,9 +98,13 @@ public class MainActivity extends AppCompatActivity {
                     countryFlag = json.getJSONObject("countryInfo").get("flag").toString();
                     Picasso.get().load(countryFlag).into(countryFlagImage);
                 }
-
+                notFoundImage.setVisibility(View.INVISIBLE);
                 linearLayout.setVisibility(View.VISIBLE);
             } catch (JSONException e) {
+                linearLayout.setVisibility(View.INVISIBLE);
+                Picasso.get().load(R.drawable.notfound);
+                notFoundImage.setVisibility(View.VISIBLE);
+                Toast.makeText(getApplicationContext(),"No country named found.\nTry to correct spell",Toast.LENGTH_LONG).show();
                 Log.d("WHy this Meesage",e.getMessage());
             }
         }
