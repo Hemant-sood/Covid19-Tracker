@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 linearLayout.setVisibility(View.VISIBLE);
             } catch (JSONException e) {
                 linearLayout.setVisibility(View.INVISIBLE);
+                countryFlagImage.setVisibility(View.INVISIBLE);
                 Picasso.get().load(R.drawable.notfound);
                 notFoundImage.setVisibility(View.VISIBLE);
                 Toast.makeText(getApplicationContext(),"No country named found.\nTry to correct spell",Toast.LENGTH_LONG).show();
