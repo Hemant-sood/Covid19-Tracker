@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 todayDeath.setText(json.get("todayDeaths").toString());
                 todayCases.setText(json.get("todayCases").toString());
                 active.setText(json.get("active").toString());
+                countryFlagImage.setVisibility(View.VISIBLE);
                 if( inputText.equals("world") || inputText.equals("World") ){
 
                     Picasso.get().load(R.drawable.worldwide).into(countryFlagImage);
